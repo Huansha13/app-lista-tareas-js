@@ -8,6 +8,10 @@ class TaskController {
         this.updateView(); // Persistencia de datos
     }
 
+    loadFechaHoy() {
+        this.view.loadFechaHoy(this.model.getFechaHoy());
+    }
+
     // Manejar agregar tarea
     handleAddTask(task) {
         this.model.addTask(task);

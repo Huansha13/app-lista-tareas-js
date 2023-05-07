@@ -105,4 +105,8 @@ class TaskView {
 
         return li;
     }
+
+    loadFechaHoy(fecha) {
+        $("#fechaHoy").append(fecha);
+    }
 }

@@ -25,6 +25,20 @@ class TaskModel {
         this.save(); // Persistencia de datos
     }
 
+    // Fecha del dia
+    getFechaHoy() {
+        const date = new Date();
+        const options = {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          };
+        return new Intl.DateTimeFormat('es-ES', options).format(date);
+    }
+
     
     /**
      * Persistencia de datos
