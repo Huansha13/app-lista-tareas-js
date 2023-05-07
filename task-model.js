@@ -19,6 +19,12 @@ class TaskModel {
         this.save(); // Persistencia de datos
     }
 
+    // Método para editar una tarea existente
+    editTask(index, newTaskName) {
+        this.tasks[index] = newTaskName;
+        this.save(); // Persistencia de datos
+    }
+
     
     /**
      * Persistencia de datos
@@ -33,7 +39,6 @@ class TaskModel {
     // Método para cargar la lista de tareas desde el almacenamiento local
     load() {
         const tasks = localStorage.getItem('tasks');
-        console.log("🚀 ~ file: task-model.js:33 ~ TaskModel ~ load ~ tasks:", tasks)
         if (tasks) {
             this.tasks = JSON.parse(tasks);
         }

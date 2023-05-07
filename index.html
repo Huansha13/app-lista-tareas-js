@@ -11,7 +11,8 @@
       <form id="task-form" class="mb-4">
         <div class="input-group">
           <input type="text" id="task-input" class="form-control" placeholder="Ingrese una tarea">
-          <button type="submit" class="btn btn-primary">Agregar</button>
+          <button type="submit" class="btn btn-primary" data-action="add" id="btn-agregar">Agregar</button>
+          <button type="submit" class="btn btn-success" data-action="edit" id="btn-actualizar">Actualizar</button>
         </div>
       </form>
       <ul id="task-list" class="list-group"></ul>
@@ -23,6 +24,9 @@
     <script src="task-view.js"></script>
     <script src="task-controller.js"></script>
     <script>
+
+      $("#btn-actualizar").hide();
+
       // Instanciar objetos modelo, vista y controlador
       const model = new TaskModel();
       const view = new TaskView();

@@ -4,6 +4,7 @@ class TaskController {
         this.view = view;
         this.view.bindEvents(this);
 
+         // Actualizar la vista con la lista de tareas actual
         this.updateView(); // Persistencia de datos
     }
 
@@ -25,6 +26,17 @@ class TaskController {
         this.updateView(); // Persistencia de datos
     }
 
+    // Método para editar una tarea existente
+    editTask(index, newTaskName) {
+        this.model.editTask(index, newTaskName);
+
+        this.updateView(); // Persistencia de datos
+    }
+
+    // Método para obtener una tarea de la lista de tareas
+    taskByIndex(index) {
+        this.view.setTaskInput(this.model.tasks[index], index);
+    }
 
 
     // Para persistencia de datos
